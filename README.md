@@ -51,3 +51,6 @@ if (response.status === 200) {
     percentages = await response.json();
 }
 ```
+
+### Sequence Diagram
+![](https://github.com/hermnich/Percent-Microservice/blob/main/UML.png?raw=true)
