@@ -17,12 +17,16 @@ app.post('/percent',
     (req, res) => {
         const validation = test.validationResult(req);
         if (validation.isEmpty()) {
+            console.log(`Converting:`)
+            console.log(req.body)
             const total = req.query.total
             let results = {};
         
             Object.keys(req.body).forEach((key) => {
                 results[key] = req.body[key] * 100 / total
             });
+            console.log(`Final Results:`)
+            console.log(results)
             res.status(200).json(results);
         } else {
             res.status(400).json({Error: "Invalid request"})
